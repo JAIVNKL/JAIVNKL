@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שאלון היכרות</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .question {
+            color: blue;
+        }
+        .thank-you {
+            display: none;
+            color: blue;
+            font-size: 2em;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .close-button {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>שאלון היכרות</h1>
+    <form id="survey-form">
+        <div class="question">
+            <label for="name">שם:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="question">
+            <label for="age">גיל:</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+        <div class="question">
+            <label for="email">אימייל:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="question">
+            <label for="hobbies">תחביבים:</label>
+            <input type="text" id="hobbies" name="hobbies">
+        </div>
+        <button type="submit">שלח</button>
+    </form>
+    <div class="thank-you" id="thank-you-message">תודה</div>
+    <div class="close-button" id="close-button">
+        <button onclick="window.close()">סגור כרטיסייה</button>
+    </div>
+
+    <script>
+        document.getElementById('survey-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('survey-form').style.display = 'none';
+            document.getElementById('thank-you-message').style.display = 'block';
+            document.getElementById('close-button').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
